@@ -39,9 +39,6 @@ jobs:
           ls -la
           rm -f output.log
           "/c/Program Files/MATLAB/R2021a/bin/matlab" -nosplash -nodesktop -r "disp(version); exit" -logfile output.log
-          pwd
-          ls -la
-          cat output.log
 
       - name: Check MATLAB 2
         run: |
