@@ -31,7 +31,7 @@ jobs:
           pwd
           ls -la
 
-      - name: Check MATLAB
+      - name: Check MATLAB 1
         run: |
           echo $SHELL
           echo $PATH
@@ -43,4 +43,11 @@ jobs:
           ls -la
           cat output.log
 
+      - name: Check MATLAB 2
+        run: |
+          echo $SHELL
+          echo $PATH
+          pwd
+          ls -la
+          cat output.log
 
