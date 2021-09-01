@@ -30,7 +30,6 @@ jobs:
         run: |
           pwd
           ls -la
-          cd osqp-matlab && git submodule update --init --recursive
 
       - name: Check MATLAB
         run: |
