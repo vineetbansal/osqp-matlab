@@ -35,6 +35,7 @@ jobs:
         run: |
           echo $SHELL
           echo $PATH
-          which matlab
+          "/c/Program Files/MATLAB/R2021a/bin/matlab" -nosplash -nodesktop -r "disp(version); exit" -logfile output.log
+          cat output.log
 
 
