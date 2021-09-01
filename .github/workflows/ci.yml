@@ -33,7 +33,7 @@ jobs:
 
       - name: Check MATLAB
         run: |
-          matlab -nosplash -nodesktop -r "disp(version); exit" -logfile output.log
-          cat output.log
+          echo $SHELL
+          which matlab
 
 
