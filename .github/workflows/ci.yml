@@ -22,24 +22,13 @@ jobs:
         with:
           submodules: false
 
-      - name: Install MATLAB
-        uses: matlab-actions/setup-matlab@v1
+      - name: Check out submodules recursively
+        run: |
+          cd osqp-matlab && git submodule update --init --recursive
 
-      - name: Build OSQP interface
-        uses: matlab-actions/run-command@v1
-        with:
-          command: make_osqp
+      - name: Check MATLAB
+        run: |
+          matlab -nosplash -nodesktop -r "disp(version); exit" -logfile output.log
+          cat output.log
 
-      - name: Run tests
-        uses: matlab-actions/run-tests@v1
-        with:
-          source-folder: ./
-          select-by-folder: unittests
-          test-results-junit: test-results/results.xml
 
-      - name: Publish Test Results
-        uses: mikepenz/action-junit-report@v2
-        with:
-          fail_on_failure: true
-          check_name: Test results
-          report_paths: 'test-results/**/*.xml'
