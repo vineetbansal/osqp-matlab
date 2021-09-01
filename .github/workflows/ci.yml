@@ -34,6 +34,7 @@ jobs:
       - name: Check MATLAB
         run: |
           echo $SHELL
+          echo $PATH
           which matlab
 
 
